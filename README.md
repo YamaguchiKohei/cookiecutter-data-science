@@ -8,7 +8,7 @@ _A logical, reasonably standardized, but flexible project structure for doing an
 
 ### Requirements to use the cookiecutter template:
 -----------
- - Python 2.7 or 3.5
+ - Python 3.5
  - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip by or conda depending on how you manage your Python packages:
 
 ``` bash
@@ -26,7 +26,7 @@ $ conda install cookiecutter
 ### To start a new project, run:
 ------------
 
-    cookiecutter https://github.com/drivendata/cookiecutter-data-science
+    cookiecutter https://github.com/YamaguchiKohei/cookiecutter-data-science
 
 
 [![asciicast](https://asciinema.org/a/244658.svg)](https://asciinema.org/a/244658)
@@ -60,27 +60,27 @@ The directory structure of your new project looks like this:
 ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures        <- Generated graphics and figures to be used in reporting
 │
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
+├── pyproject.toml     <- The requirements file for reproducing the analysis environment.
 │
-├── src                <- Source code for use in this project.
-│   ├── __init__.py    <- Makes src a Python module
-│   │
-│   ├── data           <- Scripts to download or generate data
-│   │   └── make_dataset.py
-│   │
-│   ├── features       <- Scripts to turn raw data into features for modeling
-│   │   └── build_features.py
-│   │
-│   ├── models         <- Scripts to train models and then use trained models to make
-│   │   │                 predictions
-│   │   ├── predict_model.py
-│   │   └── train_model.py
-│   │
-│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-│       └── visualize.py
+├── poetry.lock        <- The requirements file for reproducing the analysis environment.
+│                         This file is generated automatically by Poetry.
 │
-└── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
+└── src                <- Source code for use in this project.
+    ├── __init__.py    <- Makes src a Python module
+    │
+    ├── data           <- Scripts to download or generate data
+    │   └── make_dataset.py
+    │
+    ├── features       <- Scripts to turn raw data into features for modeling
+    │   └── build_features.py
+    │
+    ├── models         <- Scripts to train models and then use trained models to make
+    │   │                 predictions
+    │   ├── predict_model.py
+    │   └── train_model.py
+    │
+    └── visualization  <- Scripts to create exploratory and results oriented visualizations
+        └── visualize.py
 ```
 
 ## Contributing
@@ -95,4 +95,4 @@ We welcome contributions! [See the docs for guidelines](https://drivendata.githu
 ### Running the tests
 ------------
 
-    py.test tests
+    pytest tests
